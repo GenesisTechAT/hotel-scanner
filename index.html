@@ -4,24 +4,24 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Hotel Scanner</title>
-  <meta name="description" content="Hotel Scanner checks if your hotel is cheaper elsewhere — right on the page, while you browse. Free Chrome extension for Booking.com, Expedia, Hotels.com and more.">
+  <meta name="description" content="Hotel Scanner checks if your hotel is cheaper elsewhere, right on the page, while you browse. Free Chrome extension for Booking.com, Expedia, Hotels.com and more.">
   <meta name="keywords" content="hotel price comparison, cheap hotels, hotel deals, booking extension, chrome extension, hotel scanner, booking.com, expedia, hotels.com, agoda, trivago, kayak, priceline">
-  <meta name="author" content="Hotel Scanner">
+  <meta name="author" content="Genesis Technologies">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://genesistechat.github.io/hotel-scanner/">
 
   <!-- Open Graph -->
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Hotel Scanner — Find Cheaper Hotel Deals Automatically">
-  <meta property="og:description" content="Hotel Scanner checks if your hotel is cheaper elsewhere — right on the page, while you browse. Free Chrome extension.">
+  <meta property="og:title" content="Hotel Scanner. Find Cheaper Hotel Deals Automatically">
+  <meta property="og:description" content="Hotel Scanner checks if your hotel is cheaper elsewhere, right on the page, while you browse. Free Chrome extension.">
   <meta property="og:url" content="https://genesistechat.github.io/hotel-scanner/">
   <meta property="og:site_name" content="Hotel Scanner">
   <meta property="og:locale" content="en_US">
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Hotel Scanner — Find Cheaper Hotel Deals">
-  <meta name="twitter:description" content="Free Chrome extension that checks if your hotel is cheaper elsewhere — right on the page, while you browse.">
+  <meta name="twitter:title" content="Hotel Scanner. Find Cheaper Hotel Deals">
+  <meta name="twitter:description" content="Free Chrome extension that checks if your hotel is cheaper elsewhere, right on the page, while you browse.">
 
   <!-- Favicon (inline SVG via data URI) -->
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 128 128'%3E%3Cdefs%3E%3ClinearGradient id='bg' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%230ea5e9'/%3E%3Cstop offset='100%25' stop-color='%230284c7'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='128' height='128' rx='28' ry='28' fill='url(%23bg)'/%3E%3Crect x='30' y='38' width='50' height='56' rx='4' fill='white' opacity='0.95'/%3E%3Crect x='37' y='46' width='8' height='8' rx='1.5' fill='%230ea5e9' opacity='0.6'/%3E%3Crect x='51' y='46' width='8' height='8' rx='1.5' fill='%230ea5e9' opacity='0.6'/%3E%3Crect x='65' y='46' width='8' height='8' rx='1.5' fill='%230ea5e9' opacity='0.6'/%3E%3Crect x='37' y='60' width='8' height='8' rx='1.5' fill='%230ea5e9' opacity='0.6'/%3E%3Crect x='51' y='60' width='8' height='8' rx='1.5' fill='%230ea5e9' opacity='0.6'/%3E%3Crect x='65' y='60' width='8' height='8' rx='1.5' fill='%230ea5e9' opacity='0.6'/%3E%3Crect x='49' y='76' width='12' height='18' rx='2' fill='%230ea5e9' opacity='0.5'/%3E%3Crect x='30' y='36' width='50' height='6' rx='3' fill='white'/%3E%3Ccircle cx='82' cy='52' r='18' fill='none' stroke='white' stroke-width='5' opacity='0.95'/%3E%3Cline x1='94' y1='64' x2='106' y2='76' stroke='white' stroke-width='5' stroke-linecap='round' opacity='0.95'/%3E%3Ccircle cx='82' cy='52' r='8' fill='%2334d399'/%3E%3Ctext x='82' y='56' text-anchor='middle' font-family='Arial' font-weight='bold' font-size='12' fill='white'%3E%25%3C/text%3E%3C/svg%3E">
@@ -43,7 +43,8 @@
     "softwareVersion": "1.0.0",
     "author": {
       "@type": "Organization",
-      "name": "Hotel Scanner"
+      "name": "Genesis Technologies",
+      "url": "https://www.genesis.co.at/"
     }
   }
   </script>
@@ -110,16 +111,7 @@
     .hero {
       text-align: center;
       padding: 80px 24px 64px;
-      background: linear-gradient(160deg, #f0f9ff 0%, var(--bg) 60%);
-    }
-    .hero-icon {
-      display: inline-block;
-      margin-bottom: 24px;
-    }
-    .hero-icon svg {
-      width: 72px;
-      height: 72px;
-      filter: drop-shadow(0 4px 12px rgba(14, 165, 233, 0.25));
+      background: linear-gradient(160deg, #e0f2fe 0%, #f0f9ff 40%, var(--bg) 80%);
     }
     .badge {
       display: inline-block;
@@ -216,14 +208,15 @@
     .step {
       background: var(--white);
       border: 1px solid var(--border);
+      border-top: 3px solid var(--sky);
       border-radius: 14px;
       padding: 28px 24px;
     }
     .step-num {
       width: 36px;
       height: 36px;
-      background: #e0f2fe;
-      color: var(--sky-dark);
+      background: linear-gradient(135deg, #0ea5e9, #0284c7);
+      color: var(--white);
       font-weight: 800;
       font-size: 16px;
       border-radius: 50%;
@@ -257,13 +250,13 @@
       justify-content: center;
     }
     .site-chip {
-      background: var(--bg);
-      border: 1px solid var(--border);
+      background: #e0f2fe;
+      border: 1px solid #bae6fd;
       border-radius: 100px;
       padding: 6px 16px;
       font-size: 14px;
-      font-weight: 500;
-      color: var(--slate);
+      font-weight: 600;
+      color: var(--sky-dark);
     }
 
     /* FEATURES */
@@ -292,6 +285,14 @@
       height: 20px;
       color: var(--sky-dark);
     }
+    .feature-icon.blue { background: #e0f2fe; }
+    .feature-icon.blue svg { color: #0284c7; }
+    .feature-icon.amber { background: #fef3c7; }
+    .feature-icon.amber svg { color: #d97706; }
+    .feature-icon.violet { background: #ede9fe; }
+    .feature-icon.violet svg { color: #7c3aed; }
+    .feature-icon.emerald { background: #d1fae5; }
+    .feature-icon.emerald svg { color: #059669; }
     .feature h3 {
       font-size: 15px;
       font-weight: 700;
@@ -306,7 +307,7 @@
     /* CTA BOTTOM */
     .cta-bottom {
       text-align: center;
-      background: linear-gradient(160deg, #0f172a 0%, #1e3a5f 100%);
+      background: linear-gradient(160deg, #0c4a6e 0%, #0369a1 50%, #0ea5e9 100%);
       padding: 72px 24px;
       color: var(--white);
     }
@@ -362,35 +363,16 @@
 
   <!-- HERO -->
   <section class="hero">
-    <div class="hero-icon">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" aria-hidden="true">
-        <defs><linearGradient id="bg2" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#0ea5e9"/><stop offset="100%" stop-color="#0284c7"/></linearGradient></defs>
-        <rect width="128" height="128" rx="28" ry="28" fill="url(#bg2)"/>
-        <rect x="30" y="38" width="50" height="56" rx="4" fill="white" opacity="0.95"/>
-        <rect x="37" y="46" width="8" height="8" rx="1.5" fill="#0ea5e9" opacity="0.6"/>
-        <rect x="51" y="46" width="8" height="8" rx="1.5" fill="#0ea5e9" opacity="0.6"/>
-        <rect x="65" y="46" width="8" height="8" rx="1.5" fill="#0ea5e9" opacity="0.6"/>
-        <rect x="37" y="60" width="8" height="8" rx="1.5" fill="#0ea5e9" opacity="0.6"/>
-        <rect x="51" y="60" width="8" height="8" rx="1.5" fill="#0ea5e9" opacity="0.6"/>
-        <rect x="65" y="60" width="8" height="8" rx="1.5" fill="#0ea5e9" opacity="0.6"/>
-        <rect x="49" y="76" width="12" height="18" rx="2" fill="#0ea5e9" opacity="0.5"/>
-        <rect x="30" y="36" width="50" height="6" rx="3" fill="white"/>
-        <circle cx="82" cy="52" r="18" fill="none" stroke="white" stroke-width="5" opacity="0.95"/>
-        <line x1="94" y1="64" x2="106" y2="76" stroke="white" stroke-width="5" stroke-linecap="round" opacity="0.95"/>
-        <circle cx="82" cy="52" r="8" fill="#34d399"/>
-        <text x="82" y="56" text-anchor="middle" font-family="Arial,sans-serif" font-weight="bold" font-size="12" fill="white">%</text>
-      </svg>
-    </div>
     <div class="badge">Free Chrome Extension</div>
     <h1>Stop overpaying for hotels.<br><span>We check for you.</span></h1>
     <p class="hero-sub">
-      Hotel Scanner quietly checks if the hotel you're browsing is cheaper elsewhere —
+      Hotel Scanner quietly checks if the hotel you're browsing is cheaper elsewhere
       and shows you the deal right on the page.
     </p>
     <div class="cta-group">
       <a href="https://chrome.google.com/webstore" class="btn-primary">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="4"/><line x1="21.17" y1="8" x2="12" y2="8"/><line x1="3.95" y1="6.06" x2="8.54" y2="14"/><line x1="10.88" y1="21.94" x2="15.46" y2="14"/></svg>
-        Add to Chrome &mdash; It's Free
+        Add to Chrome
       </a>
       <a href="privacy-policy.html" class="btn-secondary">Privacy Policy</a>
     </div>
@@ -409,7 +391,7 @@
       <div class="step">
         <div class="step-num">2</div>
         <h3>Browse as normal</h3>
-        <p>Visit any hotel page on Booking.com, Expedia, Hotels.com and more &mdash; just like you always do.</p>
+        <p>Visit any hotel page on Booking.com, Expedia, Hotels.com and more. Just like you always do.</p>
       </div>
       <div class="step">
         <div class="step-num">3</div>
@@ -443,7 +425,7 @@
     <h2>Built for travellers, not trackers.</h2>
     <div class="features">
       <div class="feature">
-        <div class="feature-icon">
+        <div class="feature-icon blue">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
         </div>
         <div>
@@ -452,7 +434,7 @@
         </div>
       </div>
       <div class="feature">
-        <div class="feature-icon">
+        <div class="feature-icon amber">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
         </div>
         <div>
@@ -461,21 +443,21 @@
         </div>
       </div>
       <div class="feature">
-        <div class="feature-icon">
+        <div class="feature-icon violet">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
         </div>
         <div>
           <h3>Non-intrusive overlay</h3>
-          <p>A small, dismissible banner &mdash; only shows when it actually finds a better deal.</p>
+          <p>A small, dismissible banner that only shows when it actually finds a better deal.</p>
         </div>
       </div>
       <div class="feature">
-        <div class="feature-icon">
+        <div class="feature-icon emerald">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
         </div>
         <div>
           <h3>Completely free</h3>
-          <p>Hotel Scanner earns a small referral fee when you book &mdash; so you never pay a thing.</p>
+          <p>Hotel Scanner earns a small referral fee when you book, so you never pay a thing.</p>
         </div>
       </div>
     </div>
@@ -487,13 +469,13 @@
     <p>Install takes 10 seconds. Works instantly.</p>
     <a href="https://chrome.google.com/webstore" class="btn-primary">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="width:20px;height:20px" aria-hidden="true"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="4"/><line x1="21.17" y1="8" x2="12" y2="8"/><line x1="3.95" y1="6.06" x2="8.54" y2="14"/><line x1="10.88" y1="21.94" x2="15.46" y2="14"/></svg>
-      Add to Chrome &mdash; It's Free
+      Add to Chrome
     </a>
   </section>
 
   <footer>
     <p>
-      &copy; 2026 Hotel Scanner &nbsp;<span class="footer-sep">&middot;</span>&nbsp;
+      &copy; 2026 <a href="https://www.genesis.co.at/" target="_blank" rel="noopener">Genesis Technologies</a> &nbsp;<span class="footer-sep">&middot;</span>&nbsp;
       Powered by <a href="https://b0arding.com" target="_blank" rel="noopener">b0arding.com</a>
       &nbsp;<span class="footer-sep">&middot;</span>&nbsp;
       <a href="privacy-policy.html">Privacy Policy</a>
