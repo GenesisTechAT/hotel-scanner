@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hotel Scanner — Find Cheaper Hotel Deals Automatically</title>
+  <meta name="description" content="Hotel Scanner checks if your hotel is cheaper elsewhere — right on the page, while you browse. Free Chrome extension.">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --sky: #0ea5e9;
+      --sky-dark: #0284c7;
+      --navy: #0f172a;
+      --slate: #334155;
+      --muted: #64748b;
+      --bg: #f8fafc;
+      --white: #ffffff;
+      --border: #e2e8f0;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: var(--bg);
+      color: var(--slate);
+      line-height: 1.6;
+    }
+
+    /* NAV */
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 18px 32px;
+      background: var(--white);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+    .nav-logo {
+      font-size: 18px;
+      font-weight: 800;
+      color: var(--navy);
+      letter-spacing: -0.3px;
+    }
+    .nav-logo span { color: var(--sky); }
+    .nav-link {
+      font-size: 14px;
+      color: var(--muted);
+      text-decoration: none;
+    }
+    .nav-link:hover { color: var(--sky); }
+
+    /* HERO */
+    .hero {
+      text-align: center;
+      padding: 80px 24px 64px;
+      background: linear-gradient(160deg, #f0f9ff 0%, var(--bg) 60%);
+    }
+    .badge {
+      display: inline-block;
+      background: #e0f2fe;
+      color: var(--sky-dark);
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      padding: 4px 12px;
+      border-radius: 100px;
+      margin-bottom: 20px;
+    }
+    h1 {
+      font-size: clamp(32px, 6vw, 52px);
+      font-weight: 900;
+      color: var(--navy);
+      letter-spacing: -1px;
+      line-height: 1.15;
+      max-width: 720px;
+      margin: 0 auto 20px;
+    }
+    h1 span { color: var(--sky); }
+    .hero-sub {
+      font-size: clamp(16px, 2.5vw, 19px);
+      color: var(--muted);
+      max-width: 540px;
+      margin: 0 auto 36px;
+    }
+    .cta-group {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--sky);
+      color: var(--white);
+      font-size: 16px;
+      font-weight: 700;
+      padding: 14px 28px;
+      border-radius: 10px;
+      text-decoration: none;
+      transition: background 0.15s;
+    }
+    .btn-primary:hover { background: var(--sky-dark); }
+    .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--muted);
+      padding: 14px 20px;
+      border-radius: 10px;
+      text-decoration: none;
+      border: 1px solid var(--border);
+      background: var(--white);
+      transition: border-color 0.15s, color 0.15s;
+    }
+    .btn-secondary:hover { border-color: var(--sky); color: var(--sky); }
+
+    /* HOW IT WORKS */
+    .section {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 64px 24px;
+    }
+    .section-label {
+      text-align: center;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--sky);
+      margin-bottom: 12px;
+    }
+    h2 {
+      text-align: center;
+      font-size: clamp(24px, 4vw, 34px);
+      font-weight: 800;
+      color: var(--navy);
+      margin-bottom: 48px;
+      letter-spacing: -0.5px;
+    }
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 24px;
+    }
+    .step {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 28px 24px;
+    }
+    .step-num {
+      width: 36px;
+      height: 36px;
+      background: #e0f2fe;
+      color: var(--sky-dark);
+      font-weight: 800;
+      font-size: 16px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 16px;
+    }
+    .step h3 {
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 8px;
+    }
+    .step p {
+      font-size: 14px;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    /* SITES */
+    .sites-section {
+      background: var(--white);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+    .sites-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: center;
+    }
+    .site-chip {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 100px;
+      padding: 6px 16px;
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--slate);
+    }
+
+    /* FEATURES */
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+    }
+    .feature {
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+    }
+    .feature-icon {
+      font-size: 22px;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+    .feature h3 {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 4px;
+    }
+    .feature p {
+      font-size: 14px;
+      color: var(--muted);
+    }
+
+    /* CTA BOTTOM */
+    .cta-bottom {
+      text-align: center;
+      background: linear-gradient(160deg, #0f172a 0%, #1e3a5f 100%);
+      padding: 72px 24px;
+      color: var(--white);
+    }
+    .cta-bottom h2 {
+      color: var(--white);
+      margin-bottom: 16px;
+    }
+    .cta-bottom p {
+      color: #94a3b8;
+      font-size: 16px;
+      margin-bottom: 32px;
+    }
+
+    /* FOOTER */
+    footer {
+      text-align: center;
+      padding: 24px;
+      font-size: 13px;
+      color: var(--muted);
+      border-top: 1px solid var(--border);
+      background: var(--white);
+    }
+    footer a { color: var(--muted); text-decoration: none; }
+    footer a:hover { color: var(--sky); }
+    .footer-sep { margin: 0 8px; }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="nav-logo">Hotel<span>Scanner</span></div>
+    <a href="privacy-policy.html" class="nav-link">Privacy Policy</a>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="badge">Free Chrome Extension</div>
+    <h1>Stop overpaying for hotels.<br><span>We check for you.</span></h1>
+    <p class="hero-sub">
+      Hotel Scanner quietly checks if the hotel you're browsing is cheaper elsewhere —
+      and shows you the deal right on the page.
+    </p>
+    <div class="cta-group">
+      <a href="https://chrome.google.com/webstore" class="btn-primary">
+        &#10142; Add to Chrome — It's Free
+      </a>
+      <a href="privacy-policy.html" class="btn-secondary">Privacy Policy</a>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section class="section">
+    <div class="section-label">How it works</div>
+    <h2>Three steps. Zero effort.</h2>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <h3>Install the extension</h3>
+        <p>Add Hotel Scanner to Chrome in one click. No account, no sign-up needed.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <h3>Browse as normal</h3>
+        <p>Visit any hotel page on Booking.com, Expedia, Hotels.com and more — just like you always do.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <h3>See the savings</h3>
+        <p>If a cheaper deal exists, a small overlay appears showing you how much you can save. One click to book it.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SUPPORTED SITES -->
+  <section class="sites-section">
+    <div class="section">
+      <div class="section-label">Works on</div>
+      <h2>8 major booking sites</h2>
+      <div class="sites-grid">
+        <span class="site-chip">Booking.com</span>
+        <span class="site-chip">Expedia</span>
+        <span class="site-chip">Hotels.com</span>
+        <span class="site-chip">Agoda</span>
+        <span class="site-chip">Trivago</span>
+        <span class="site-chip">Kayak</span>
+        <span class="site-chip">HotelsCombined</span>
+        <span class="site-chip">Priceline</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURES -->
+  <section class="section">
+    <div class="section-label">Why Hotel Scanner</div>
+    <h2>Built for travellers, not trackers.</h2>
+    <div class="features">
+      <div class="feature">
+        <div class="feature-icon">🔒</div>
+        <div>
+          <h3>No personal data collected</h3>
+          <p>We never track you. No account, no cookies, no analytics. See our privacy policy.</p>
+        </div>
+      </div>
+      <div class="feature">
+        <div class="feature-icon">⚡</div>
+        <div>
+          <h3>Runs automatically</h3>
+          <p>No extra steps. Open a hotel page and Hotel Scanner does the rest in the background.</p>
+        </div>
+      </div>
+      <div class="feature">
+        <div class="feature-icon">💬</div>
+        <div>
+          <h3>Non-intrusive overlay</h3>
+          <p>A small, dismissible banner — only shows when it actually finds a better deal.</p>
+        </div>
+      </div>
+      <div class="feature">
+        <div class="feature-icon">🆓</div>
+        <div>
+          <h3>Completely free</h3>
+          <p>Hotel Scanner earns a small referral fee when you book — so you never pay a thing.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA BOTTOM -->
+  <section class="cta-bottom">
+    <h2>Start saving on your next hotel.</h2>
+    <p>Install takes 10 seconds. Works instantly.</p>
+    <a href="https://chrome.google.com/webstore" class="btn-primary">
+      &#10142; Add to Chrome — It's Free
+    </a>
+  </section>
+
+  <footer>
+    <p>
+      &copy; 2026 Hotel Scanner &nbsp;<span class="footer-sep">&middot;</span>&nbsp;
+      Powered by <a href="https://b0arding.com" target="_blank">b0arding.com</a>
+      &nbsp;<span class="footer-sep">&middot;</span>&nbsp;
+      <a href="privacy-policy.html">Privacy Policy</a>
+      &nbsp;<span class="footer-sep">&middot;</span>&nbsp;
+      <a href="https://github.com/GenesisTechAT/b0arding-extension" target="_blank">GitHub</a>
+    </p>
+  </footer>
+
+</body>
+</html>
