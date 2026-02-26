@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hotel Scanner - Privacy Policy</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      color: #1e293b;
+      background: #f8fafc;
+      line-height: 1.7;
+      padding: 0 16px;
+    }
+    .container {
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 40px 0 60px;
+    }
+    h1 {
+      font-size: 28px;
+      font-weight: 800;
+      margin-bottom: 8px;
+      color: #0f172a;
+    }
+    .last-updated {
+      font-size: 13px;
+      color: #64748b;
+      margin-bottom: 32px;
+    }
+    h2 {
+      font-size: 18px;
+      font-weight: 700;
+      margin-top: 28px;
+      margin-bottom: 10px;
+      color: #0f172a;
+    }
+    p, li {
+      font-size: 15px;
+      color: #334155;
+      margin-bottom: 12px;
+    }
+    ul {
+      padding-left: 24px;
+      margin-bottom: 12px;
+    }
+    li { margin-bottom: 6px; }
+    strong { color: #0f172a; }
+    a { color: #0ea5e9; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .highlight {
+      background: #f0f9ff;
+      border: 1px solid #bae6fd;
+      border-radius: 8px;
+      padding: 14px 18px;
+      margin: 16px 0;
+      font-size: 14px;
+      color: #0369a1;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Privacy Policy</h1>
+    <p class="last-updated">Last updated: February 25, 2026</p>
+
+    <div class="highlight">
+      <strong>Summary:</strong> Hotel Scanner does not collect, store, or transmit any personal information.
+      All processing happens locally in your browser. The only external communication is with
+      the b0arding.com API to check hotel prices.
+    </div>
+
+    <h2>1. What Hotel Scanner Does</h2>
+    <p>
+      Hotel Scanner is a browser extension that automatically checks if a hotel you are viewing
+      on supported booking sites (Booking.com, Expedia, Hotels.com, Agoda, Trivago, Kayak,
+      HotelsCombined, Priceline) is available at a lower price on b0arding.com.
+    </p>
+
+    <h2>2. Data We Read From Pages</h2>
+    <p>When you visit a hotel detail page on a supported site, Hotel Scanner reads:</p>
+    <ul>
+      <li>The <strong>hotel name</strong> displayed on the page</li>
+      <li>The <strong>check-in and check-out dates</strong> from the page URL or form</li>
+      <li>The <strong>listed price</strong> on the booking site</li>
+    </ul>
+    <p>
+      This data is used solely to query the b0arding.com API for a price comparison.
+      It is <strong>not stored</strong> anywhere beyond the current page session.
+    </p>
+
+    <h2>3. External Communication</h2>
+    <p>
+      Hotel Scanner sends the hotel name, dates, and price to <strong>b0arding.com</strong>
+      to retrieve comparison pricing. This is the only external service the extension communicates with.
+    </p>
+    <p>
+      No data is sent to any analytics, advertising, or tracking services.
+    </p>
+
+    <h2>4. Data We Store Locally</h2>
+    <p>Hotel Scanner stores the following in your browser's local extension storage:</p>
+    <ul>
+      <li><strong>Dark mode preference</strong> (light or dark theme toggle)</li>
+    </ul>
+    <p>
+      This data never leaves your browser and can be cleared at any time by removing the extension
+      or clearing extension data in your browser settings.
+    </p>
+
+    <h2>5. Data We Do NOT Collect</h2>
+    <ul>
+      <li>No personal information (name, email, address, etc.)</li>
+      <li>No browsing history beyond the current hotel page</li>
+      <li>No cookies or tracking identifiers</li>
+      <li>No analytics or usage telemetry</li>
+      <li>No account or login information</li>
+    </ul>
+
+    <h2>6. Third-Party Services</h2>
+    <p>
+      The only third-party service used is <strong>b0arding.com</strong> for hotel price lookups.
+      Their privacy practices are governed by their own privacy policy at
+      <a href="https://b0arding.com/privacy">b0arding.com/privacy</a>.
+    </p>
+
+    <h2>7. Permissions Explained</h2>
+    <ul>
+      <li>
+        <strong>Host permissions</strong> (hotel booking sites): Required to read hotel details
+        from the page and display the price comparison overlay.
+      </li>
+      <li>
+        <strong>Storage</strong>: Required to save your theme preference (light/dark mode).
+      </li>
+      <li>
+        <strong>ActiveTab</strong>: Required to display the savings badge on the extension icon.
+      </li>
+    </ul>
+
+    <h2>8. Data Deletion</h2>
+    <p>
+      To delete all data stored by Hotel Scanner, simply remove the extension from your browser.
+      Alternatively, go to your browser's extension settings and clear the extension's storage data.
+    </p>
+
+    <h2>9. Children's Privacy</h2>
+    <p>
+      Hotel Scanner is not directed at children under 13 and does not knowingly collect
+      any information from children.
+    </p>
+
+    <h2>10. Changes to This Policy</h2>
+    <p>
+      If we make changes to this privacy policy, we will update the "Last updated" date above.
+      Continued use of the extension after changes constitutes acceptance of the updated policy.
+    </p>
+
+    <h2>11. Contact</h2>
+    <p>
+      If you have questions about this privacy policy, please open an issue on our
+      <a href="https://github.com/GenesisTechAT/b0arding-extension">GitHub repository</a>.
+    </p>
+  </div>
+</body>
+</html>
