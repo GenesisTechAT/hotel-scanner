@@ -4,7 +4,50 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Hotel Scanner — Find Cheaper Hotel Deals Automatically</title>
-  <meta name="description" content="Hotel Scanner checks if your hotel is cheaper elsewhere — right on the page, while you browse. Free Chrome extension.">
+  <meta name="description" content="Hotel Scanner checks if your hotel is cheaper elsewhere — right on the page, while you browse. Free Chrome extension for Booking.com, Expedia, Hotels.com and more.">
+  <meta name="keywords" content="hotel price comparison, cheap hotels, hotel deals, booking extension, chrome extension, hotel scanner, booking.com, expedia, hotels.com, agoda, trivago, kayak, priceline">
+  <meta name="author" content="Hotel Scanner">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://genesistechat.github.io/hotel-scanner/">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Hotel Scanner — Find Cheaper Hotel Deals Automatically">
+  <meta property="og:description" content="Hotel Scanner checks if your hotel is cheaper elsewhere — right on the page, while you browse. Free Chrome extension.">
+  <meta property="og:url" content="https://genesistechat.github.io/hotel-scanner/">
+  <meta property="og:site_name" content="Hotel Scanner">
+  <meta property="og:locale" content="en_US">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Hotel Scanner — Find Cheaper Hotel Deals">
+  <meta name="twitter:description" content="Free Chrome extension that checks if your hotel is cheaper elsewhere — right on the page, while you browse.">
+
+  <!-- Favicon (inline SVG via data URI) -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 128 128'%3E%3Cdefs%3E%3ClinearGradient id='bg' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%230ea5e9'/%3E%3Cstop offset='100%25' stop-color='%230284c7'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='128' height='128' rx='28' ry='28' fill='url(%23bg)'/%3E%3Crect x='30' y='38' width='50' height='56' rx='4' fill='white' opacity='0.95'/%3E%3Crect x='37' y='46' width='8' height='8' rx='1.5' fill='%230ea5e9' opacity='0.6'/%3E%3Crect x='51' y='46' width='8' height='8' rx='1.5' fill='%230ea5e9' opacity='0.6'/%3E%3Crect x='65' y='46' width='8' height='8' rx='1.5' fill='%230ea5e9' opacity='0.6'/%3E%3Crect x='37' y='60' width='8' height='8' rx='1.5' fill='%230ea5e9' opacity='0.6'/%3E%3Crect x='51' y='60' width='8' height='8' rx='1.5' fill='%230ea5e9' opacity='0.6'/%3E%3Crect x='65' y='60' width='8' height='8' rx='1.5' fill='%230ea5e9' opacity='0.6'/%3E%3Crect x='49' y='76' width='12' height='18' rx='2' fill='%230ea5e9' opacity='0.5'/%3E%3Crect x='30' y='36' width='50' height='6' rx='3' fill='white'/%3E%3Ccircle cx='82' cy='52' r='18' fill='none' stroke='white' stroke-width='5' opacity='0.95'/%3E%3Cline x1='94' y1='64' x2='106' y2='76' stroke='white' stroke-width='5' stroke-linecap='round' opacity='0.95'/%3E%3Ccircle cx='82' cy='52' r='8' fill='%2334d399'/%3E%3Ctext x='82' y='56' text-anchor='middle' font-family='Arial' font-weight='bold' font-size='12' fill='white'%3E%25%3C/text%3E%3C/svg%3E">
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Hotel Scanner",
+    "description": "Automatically find cheaper hotel deals when you're browsing Booking.com, Expedia, Hotels.com and more.",
+    "applicationCategory": "BrowserApplication",
+    "operatingSystem": "Chrome",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "softwareVersion": "1.0.0",
+    "author": {
+      "@type": "Organization",
+      "name": "Hotel Scanner"
+    }
+  }
+  </script>
+
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -31,12 +74,23 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 18px 32px;
+      padding: 14px 32px;
       background: var(--white);
       border-bottom: 1px solid var(--border);
       position: sticky;
       top: 0;
       z-index: 10;
+    }
+    .nav-brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+    }
+    .nav-brand svg {
+      width: 32px;
+      height: 32px;
+      flex-shrink: 0;
     }
     .nav-logo {
       font-size: 18px;
@@ -57,6 +111,15 @@
       text-align: center;
       padding: 80px 24px 64px;
       background: linear-gradient(160deg, #f0f9ff 0%, var(--bg) 60%);
+    }
+    .hero-icon {
+      display: inline-block;
+      margin-bottom: 24px;
+    }
+    .hero-icon svg {
+      width: 72px;
+      height: 72px;
+      filter: drop-shadow(0 4px 12px rgba(14, 165, 233, 0.25));
     }
     .badge {
       display: inline-block;
@@ -106,6 +169,7 @@
       transition: background 0.15s;
     }
     .btn-primary:hover { background: var(--sky-dark); }
+    .btn-primary svg { width: 20px; height: 20px; }
     .btn-secondary {
       display: inline-flex;
       align-items: center;
@@ -214,9 +278,19 @@
       align-items: flex-start;
     }
     .feature-icon {
-      font-size: 22px;
+      width: 40px;
+      height: 40px;
+      background: #e0f2fe;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       flex-shrink: 0;
-      margin-top: 2px;
+    }
+    .feature-icon svg {
+      width: 20px;
+      height: 20px;
+      color: var(--sky-dark);
     }
     .feature h3 {
       font-size: 15px;
@@ -263,12 +337,50 @@
 <body>
 
   <nav>
-    <div class="nav-logo">Hotel<span>Scanner</span></div>
+    <a href="." class="nav-brand">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" aria-hidden="true">
+        <defs><linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#0ea5e9"/><stop offset="100%" stop-color="#0284c7"/></linearGradient></defs>
+        <rect width="128" height="128" rx="28" ry="28" fill="url(#bg)"/>
+        <rect x="30" y="38" width="50" height="56" rx="4" fill="white" opacity="0.95"/>
+        <rect x="37" y="46" width="8" height="8" rx="1.5" fill="#0ea5e9" opacity="0.6"/>
+        <rect x="51" y="46" width="8" height="8" rx="1.5" fill="#0ea5e9" opacity="0.6"/>
+        <rect x="65" y="46" width="8" height="8" rx="1.5" fill="#0ea5e9" opacity="0.6"/>
+        <rect x="37" y="60" width="8" height="8" rx="1.5" fill="#0ea5e9" opacity="0.6"/>
+        <rect x="51" y="60" width="8" height="8" rx="1.5" fill="#0ea5e9" opacity="0.6"/>
+        <rect x="65" y="60" width="8" height="8" rx="1.5" fill="#0ea5e9" opacity="0.6"/>
+        <rect x="49" y="76" width="12" height="18" rx="2" fill="#0ea5e9" opacity="0.5"/>
+        <rect x="30" y="36" width="50" height="6" rx="3" fill="white"/>
+        <circle cx="82" cy="52" r="18" fill="none" stroke="white" stroke-width="5" opacity="0.95"/>
+        <line x1="94" y1="64" x2="106" y2="76" stroke="white" stroke-width="5" stroke-linecap="round" opacity="0.95"/>
+        <circle cx="82" cy="52" r="8" fill="#34d399"/>
+        <text x="82" y="56" text-anchor="middle" font-family="Arial,sans-serif" font-weight="bold" font-size="12" fill="white">%</text>
+      </svg>
+      <div class="nav-logo">Hotel<span>Scanner</span></div>
+    </a>
     <a href="privacy-policy.html" class="nav-link">Privacy Policy</a>
   </nav>
 
   <!-- HERO -->
   <section class="hero">
+    <div class="hero-icon">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" aria-hidden="true">
+        <defs><linearGradient id="bg2" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#0ea5e9"/><stop offset="100%" stop-color="#0284c7"/></linearGradient></defs>
+        <rect width="128" height="128" rx="28" ry="28" fill="url(#bg2)"/>
+        <rect x="30" y="38" width="50" height="56" rx="4" fill="white" opacity="0.95"/>
+        <rect x="37" y="46" width="8" height="8" rx="1.5" fill="#0ea5e9" opacity="0.6"/>
+        <rect x="51" y="46" width="8" height="8" rx="1.5" fill="#0ea5e9" opacity="0.6"/>
+        <rect x="65" y="46" width="8" height="8" rx="1.5" fill="#0ea5e9" opacity="0.6"/>
+        <rect x="37" y="60" width="8" height="8" rx="1.5" fill="#0ea5e9" opacity="0.6"/>
+        <rect x="51" y="60" width="8" height="8" rx="1.5" fill="#0ea5e9" opacity="0.6"/>
+        <rect x="65" y="60" width="8" height="8" rx="1.5" fill="#0ea5e9" opacity="0.6"/>
+        <rect x="49" y="76" width="12" height="18" rx="2" fill="#0ea5e9" opacity="0.5"/>
+        <rect x="30" y="36" width="50" height="6" rx="3" fill="white"/>
+        <circle cx="82" cy="52" r="18" fill="none" stroke="white" stroke-width="5" opacity="0.95"/>
+        <line x1="94" y1="64" x2="106" y2="76" stroke="white" stroke-width="5" stroke-linecap="round" opacity="0.95"/>
+        <circle cx="82" cy="52" r="8" fill="#34d399"/>
+        <text x="82" y="56" text-anchor="middle" font-family="Arial,sans-serif" font-weight="bold" font-size="12" fill="white">%</text>
+      </svg>
+    </div>
     <div class="badge">Free Chrome Extension</div>
     <h1>Stop overpaying for hotels.<br><span>We check for you.</span></h1>
     <p class="hero-sub">
@@ -277,7 +389,8 @@
     </p>
     <div class="cta-group">
       <a href="https://chrome.google.com/webstore" class="btn-primary">
-        &#10142; Add to Chrome — It's Free
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="4"/><line x1="21.17" y1="8" x2="12" y2="8"/><line x1="3.95" y1="6.06" x2="8.54" y2="14"/><line x1="10.88" y1="21.94" x2="15.46" y2="14"/></svg>
+        Add to Chrome &mdash; It's Free
       </a>
       <a href="privacy-policy.html" class="btn-secondary">Privacy Policy</a>
     </div>
@@ -296,7 +409,7 @@
       <div class="step">
         <div class="step-num">2</div>
         <h3>Browse as normal</h3>
-        <p>Visit any hotel page on Booking.com, Expedia, Hotels.com and more — just like you always do.</p>
+        <p>Visit any hotel page on Booking.com, Expedia, Hotels.com and more &mdash; just like you always do.</p>
       </div>
       <div class="step">
         <div class="step-num">3</div>
@@ -330,31 +443,39 @@
     <h2>Built for travellers, not trackers.</h2>
     <div class="features">
       <div class="feature">
-        <div class="feature-icon">🔒</div>
+        <div class="feature-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+        </div>
         <div>
           <h3>No personal data collected</h3>
           <p>We never track you. No account, no cookies, no analytics. See our privacy policy.</p>
         </div>
       </div>
       <div class="feature">
-        <div class="feature-icon">⚡</div>
+        <div class="feature-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+        </div>
         <div>
           <h3>Runs automatically</h3>
           <p>No extra steps. Open a hotel page and Hotel Scanner does the rest in the background.</p>
         </div>
       </div>
       <div class="feature">
-        <div class="feature-icon">💬</div>
+        <div class="feature-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+        </div>
         <div>
           <h3>Non-intrusive overlay</h3>
-          <p>A small, dismissible banner — only shows when it actually finds a better deal.</p>
+          <p>A small, dismissible banner &mdash; only shows when it actually finds a better deal.</p>
         </div>
       </div>
       <div class="feature">
-        <div class="feature-icon">🆓</div>
+        <div class="feature-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+        </div>
         <div>
           <h3>Completely free</h3>
-          <p>Hotel Scanner earns a small referral fee when you book — so you never pay a thing.</p>
+          <p>Hotel Scanner earns a small referral fee when you book &mdash; so you never pay a thing.</p>
         </div>
       </div>
     </div>
@@ -365,18 +486,19 @@
     <h2>Start saving on your next hotel.</h2>
     <p>Install takes 10 seconds. Works instantly.</p>
     <a href="https://chrome.google.com/webstore" class="btn-primary">
-      &#10142; Add to Chrome — It's Free
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="width:20px;height:20px" aria-hidden="true"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="4"/><line x1="21.17" y1="8" x2="12" y2="8"/><line x1="3.95" y1="6.06" x2="8.54" y2="14"/><line x1="10.88" y1="21.94" x2="15.46" y2="14"/></svg>
+      Add to Chrome &mdash; It's Free
     </a>
   </section>
 
   <footer>
     <p>
       &copy; 2026 Hotel Scanner &nbsp;<span class="footer-sep">&middot;</span>&nbsp;
-      Powered by <a href="https://b0arding.com" target="_blank">b0arding.com</a>
+      Powered by <a href="https://b0arding.com" target="_blank" rel="noopener">b0arding.com</a>
       &nbsp;<span class="footer-sep">&middot;</span>&nbsp;
       <a href="privacy-policy.html">Privacy Policy</a>
       &nbsp;<span class="footer-sep">&middot;</span>&nbsp;
-      <a href="https://github.com/GenesisTechAT/b0arding-extension" target="_blank">GitHub</a>
+      <a href="https://github.com/GenesisTechAT/hotel-scanner" target="_blank" rel="noopener">GitHub</a>
     </p>
   </footer>
 
