@@ -3,213 +3,39 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Privacy Policy. Hotel Scanner</title>
-  <meta name="description" content="Hotel Scanner privacy policy. We do not collect, store, or transmit any personal information. All processing happens locally in your browser.">
-  <meta name="robots" content="index, follow">
-  <link rel="canonical" href="https://genesistechat.github.io/hotel-scanner/privacy-policy.html">
-
-  <!-- Open Graph -->
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="Privacy Policy. Hotel Scanner">
-  <meta property="og:description" content="Hotel Scanner does not collect, store, or transmit any personal information.">
-  <meta property="og:url" content="https://genesistechat.github.io/hotel-scanner/privacy-policy.html">
-
-  <!-- Favicon -->
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 128 128'%3E%3Cdefs%3E%3ClinearGradient id='bg' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%230ea5e9'/%3E%3Cstop offset='100%25' stop-color='%230284c7'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='128' height='128' rx='28' ry='28' fill='url(%23bg)'/%3E%3Crect x='30' y='38' width='50' height='56' rx='4' fill='white' opacity='0.95'/%3E%3Crect x='37' y='46' width='8' height='8' rx='1.5' fill='%230ea5e9' opacity='0.6'/%3E%3Crect x='51' y='46' width='8' height='8' rx='1.5' fill='%230ea5e9' opacity='0.6'/%3E%3Crect x='65' y='46' width='8' height='8' rx='1.5' fill='%230ea5e9' opacity='0.6'/%3E%3Crect x='37' y='60' width='8' height='8' rx='1.5' fill='%230ea5e9' opacity='0.6'/%3E%3Crect x='51' y='60' width='8' height='8' rx='1.5' fill='%230ea5e9' opacity='0.6'/%3E%3Crect x='65' y='60' width='8' height='8' rx='1.5' fill='%230ea5e9' opacity='0.6'/%3E%3Crect x='49' y='76' width='12' height='18' rx='2' fill='%230ea5e9' opacity='0.5'/%3E%3Crect x='30' y='36' width='50' height='6' rx='3' fill='white'/%3E%3Ccircle cx='82' cy='52' r='18' fill='none' stroke='white' stroke-width='5' opacity='0.95'/%3E%3Cline x1='94' y1='64' x2='106' y2='76' stroke='white' stroke-width='5' stroke-linecap='round' opacity='0.95'/%3E%3Ccircle cx='82' cy='52' r='8' fill='%2334d399'/%3E%3Ctext x='82' y='56' text-anchor='middle' font-family='Arial' font-weight='bold' font-size='12' fill='white'%3E%25%3C/text%3E%3C/svg%3E">
-
+  <title>Hotel Scanner - Privacy Policy</title>
   <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-    :root {
-      --sky: #0ea5e9;
-      --sky-dark: #0284c7;
-      --navy: #0f172a;
-      --slate: #334155;
-      --muted: #64748b;
-      --bg: #f8fafc;
-      --white: #ffffff;
-      --border: #e2e8f0;
-    }
-
-    [data-theme="dark"] {
-      --navy: #f1f5f9;
-      --slate: #cbd5e1;
-      --muted: #94a3b8;
-      --bg: #0f172a;
-      --white: #1e293b;
-      --border: #334155;
-    }
-
+    * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-      color: var(--slate);
-      background: var(--bg);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      color: #1e293b;
+      background: #f8fafc;
       line-height: 1.7;
-      transition: background 0.2s, color 0.2s;
+      padding: 0 16px;
     }
-
-    /* NAV */
-    nav {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 14px 32px;
-      background: var(--white);
-      border-bottom: 1px solid var(--border);
-      position: sticky;
-      top: 0;
-      z-index: 10;
-    }
-    .nav-brand {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      text-decoration: none;
-    }
-    .nav-brand svg {
-      width: 32px;
-      height: 32px;
-      flex-shrink: 0;
-    }
-    .nav-logo {
-      font-size: 18px;
-      font-weight: 800;
-      color: var(--navy);
-      letter-spacing: -0.3px;
-    }
-    .nav-logo span { color: var(--sky); }
-    .nav-right {
-      display: flex;
-      align-items: center;
-      gap: 16px;
-    }
-    .nav-link {
-      font-size: 14px;
-      color: var(--muted);
-      text-decoration: none;
-    }
-    .nav-link:hover { color: var(--sky); }
-    .theme-toggle {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      background: var(--bg);
-      border: 1px solid var(--border);
-      border-radius: 100px;
-      padding: 6px 14px;
-      font-size: 13px;
-      font-weight: 600;
-      color: var(--muted);
-      cursor: pointer;
-      transition: background 0.2s, border-color 0.2s, color 0.2s;
-    }
-    .theme-toggle:hover { border-color: var(--sky); color: var(--sky); }
-    .theme-toggle svg { width: 16px; height: 16px; }
-    .theme-toggle .icon-sun { display: none; }
-    .theme-toggle .icon-moon { display: block; }
-    [data-theme="dark"] .theme-toggle .icon-sun { display: block; }
-    [data-theme="dark"] .theme-toggle .icon-moon { display: none; }
-    [data-theme="dark"] .highlight { background: rgba(14, 165, 233, 0.1); border-color: rgba(14, 165, 233, 0.25); color: #7dd3fc; }
-
-    .container {
-      max-width: 680px;
-      margin: 0 auto;
-      padding: 40px 16px 60px;
-    }
-    h1 {
-      font-size: 28px;
-      font-weight: 800;
-      margin-bottom: 8px;
-      color: var(--navy);
-    }
-    .last-updated {
-      font-size: 13px;
-      color: var(--muted);
-      margin-bottom: 32px;
-    }
-    h2 {
-      font-size: 18px;
-      font-weight: 700;
-      margin-top: 28px;
-      margin-bottom: 10px;
-      color: var(--navy);
-      text-align: left;
-    }
-    p, li {
-      font-size: 15px;
-      color: var(--slate);
-      margin-bottom: 12px;
-    }
-    ul {
-      padding-left: 24px;
-      margin-bottom: 12px;
-    }
+    .container { max-width: 680px; margin: 0 auto; padding: 40px 0 60px; }
+    h1 { font-size: 28px; font-weight: 800; margin-bottom: 8px; color: #0f172a; }
+    .last-updated { font-size: 13px; color: #64748b; margin-bottom: 32px; }
+    h2 { font-size: 18px; font-weight: 700; margin-top: 28px; margin-bottom: 10px; color: #0f172a; }
+    p, li { font-size: 15px; color: #334155; margin-bottom: 12px; }
+    ul { padding-left: 24px; margin-bottom: 12px; }
     li { margin-bottom: 6px; }
-    strong { color: var(--navy); }
-    a { color: var(--sky); text-decoration: none; }
+    strong { color: #0f172a; }
+    a { color: #0ea5e9; text-decoration: none; }
     a:hover { text-decoration: underline; }
     .highlight {
-      background: #f0f9ff;
-      border: 1px solid #bae6fd;
-      border-radius: 8px;
-      padding: 14px 18px;
-      margin: 16px 0;
-      font-size: 14px;
-      color: #0369a1;
+      background: #f0f9ff; border: 1px solid #bae6fd; border-radius: 8px;
+      padding: 14px 18px; margin: 16px 0; font-size: 14px; color: #0369a1;
     }
-
-    footer {
-      text-align: center;
-      padding: 24px;
-      font-size: 13px;
-      color: var(--muted);
-      border-top: 1px solid var(--border);
-      background: var(--white);
-    }
-    footer a { color: var(--muted); text-decoration: none; }
-    footer a:hover { color: var(--sky); }
-    .footer-sep { margin: 0 8px; }
   </style>
 </head>
 <body>
-
-  <nav>
-    <a href="." class="nav-brand">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" aria-hidden="true">
-        <defs><linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#0ea5e9"/><stop offset="100%" stop-color="#0284c7"/></linearGradient></defs>
-        <rect width="128" height="128" rx="28" ry="28" fill="url(#bg)"/>
-        <rect x="30" y="38" width="50" height="56" rx="4" fill="white" opacity="0.95"/>
-        <rect x="37" y="46" width="8" height="8" rx="1.5" fill="#0ea5e9" opacity="0.6"/>
-        <rect x="51" y="46" width="8" height="8" rx="1.5" fill="#0ea5e9" opacity="0.6"/>
-        <rect x="65" y="46" width="8" height="8" rx="1.5" fill="#0ea5e9" opacity="0.6"/>
-        <rect x="37" y="60" width="8" height="8" rx="1.5" fill="#0ea5e9" opacity="0.6"/>
-        <rect x="51" y="60" width="8" height="8" rx="1.5" fill="#0ea5e9" opacity="0.6"/>
-        <rect x="65" y="60" width="8" height="8" rx="1.5" fill="#0ea5e9" opacity="0.6"/>
-        <rect x="49" y="76" width="12" height="18" rx="2" fill="#0ea5e9" opacity="0.5"/>
-        <rect x="30" y="36" width="50" height="6" rx="3" fill="white"/>
-        <circle cx="82" cy="52" r="18" fill="none" stroke="white" stroke-width="5" opacity="0.95"/>
-        <line x1="94" y1="64" x2="106" y2="76" stroke="white" stroke-width="5" stroke-linecap="round" opacity="0.95"/>
-        <circle cx="82" cy="52" r="8" fill="#34d399"/>
-        <text x="82" y="56" text-anchor="middle" font-family="Arial,sans-serif" font-weight="bold" font-size="12" fill="white">%</text>
-      </svg>
-      <div class="nav-logo">Hotel<span>Scanner</span></div>
-    </a>
-    <div class="nav-right">
-      <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
-        <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
-        <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
-        <span id="themeLabel">Dark</span>
-      </button>
-      <a href="." class="nav-link">Back to Home</a>
-    </div>
-  </nav>
-
   <div class="container">
     <h1>Privacy Policy</h1>
-    <p class="last-updated">Last updated: February 25, 2026</p>
+    <p class="last-updated">Last updated: February 26, 2026</p>
 
     <div class="highlight">
-      <strong>Summary:</strong> Hotel Scanner does not collect, store, or transmit any personal information.
+      <strong>Summary:</strong> Hotel Scanner does not collect or store any personal information.
       All processing happens locally in your browser. The only external communication is with
       the b0arding.com API to check hotel prices.
     </div>
@@ -237,8 +63,6 @@
     <p>
       Hotel Scanner sends the hotel name, dates, and price to <strong>b0arding.com</strong>
       to retrieve comparison pricing. This is the only external service the extension communicates with.
-    </p>
-    <p>
       No data is sent to any analytics, advertising, or tracking services.
     </p>
 
@@ -256,90 +80,73 @@
     <ul>
       <li>No personal information (name, email, address, etc.)</li>
       <li>No browsing history beyond the current hotel page</li>
-      <li>No cookies or tracking identifiers</li>
       <li>No analytics or usage telemetry</li>
       <li>No account or login information</li>
+      <li>No financial or payment information</li>
     </ul>
 
-    <h2>6. Third-Party Services</h2>
+    <h2>6. Affiliate Relationship &amp; Cookies</h2>
     <p>
-      The only third-party service used is <strong>b0arding.com</strong> for hotel price lookups.
-      Their privacy practices are governed by their own privacy policy at
-      <a href="https://b0arding.com/privacy">b0arding.com/privacy</a>.
+      Hotel Scanner is a partner of <strong>b0arding.com</strong>. When you click
+      "Check your price on b0arding.com", the extension sets an affiliate referral parameter
+      (<code>tscode=GENESIS</code>) in the URL and as a cookie on b0arding.com. This ensures
+      the referral is correctly attributed so Hotel Scanner earns a small commission when
+      you complete a booking — at <strong>no extra cost to you</strong>.
+    </p>
+    <p>
+      This is the only cookie Hotel Scanner interacts with. No personal data is read from
+      or written to cookies. The cookie is set on b0arding.com only, not on any other site.
     </p>
 
-    <h2>7. Permissions Explained</h2>
+    <h2>7. Third-Party Services</h2>
+    <p>
+      The only third-party service used is <strong>b0arding.com</strong> for hotel price lookups
+      and affiliate tracking. Their privacy practices are governed by their own privacy policy at
+      <a href="https://b0arding.com/privacy" target="_blank">b0arding.com/privacy</a>.
+    </p>
+
+    <h2>8. Permissions Explained</h2>
     <ul>
       <li>
-        <strong>Host permissions</strong> (hotel booking sites): Required to read hotel details
-        from the page and display the price comparison overlay.
+        <strong>Host permissions</strong> (hotel booking sites): Required to read hotel name,
+        dates, and price from the page and display the price comparison overlay.
       </li>
       <li>
-        <strong>Storage</strong>: Required to save your theme preference (light/dark mode).
+        <strong>Storage:</strong> Required to save your theme preference (light/dark mode).
       </li>
       <li>
-        <strong>ActiveTab</strong>: Required to display the savings badge on the extension icon.
+        <strong>ActiveTab:</strong> Required to display the savings percentage badge on the
+        extension icon.
+      </li>
+      <li>
+        <strong>Cookies:</strong> Required to set the affiliate referral parameter on b0arding.com
+        when you click through to check a deal.
       </li>
     </ul>
 
-    <h2>8. Data Deletion</h2>
+    <h2>9. Data Deletion</h2>
     <p>
       To delete all data stored by Hotel Scanner, simply remove the extension from your browser.
       Alternatively, go to your browser's extension settings and clear the extension's storage data.
     </p>
 
-    <h2>9. Children's Privacy</h2>
+    <h2>10. Children's Privacy</h2>
     <p>
       Hotel Scanner is not directed at children under 13 and does not knowingly collect
       any information from children.
     </p>
 
-    <h2>10. Changes to This Policy</h2>
+    <h2>11. Changes to This Policy</h2>
     <p>
       If we make changes to this privacy policy, we will update the "Last updated" date above.
       Continued use of the extension after changes constitutes acceptance of the updated policy.
     </p>
 
-    <h2>11. Contact</h2>
+    <h2>12. Contact</h2>
     <p>
       If you have questions about this privacy policy, please open an issue on our
-      <a href="https://github.com/GenesisTechAT/hotel-scanner">GitHub repository</a>.
+      <a href="https://github.com/GenesisTechAT/b0arding-extension/issues" target="_blank">GitHub repository</a>.
     </p>
   </div>
-
-  <footer>
-    <p>
-      &copy; 2026 <a href="https://www.genesis.co.at/" target="_blank" rel="noopener">Genesis Technologies</a> &nbsp;<span class="footer-sep">&middot;</span>&nbsp;
-      Powered by <a href="https://b0arding.com" target="_blank" rel="noopener">b0arding.com</a>
-      &nbsp;<span class="footer-sep">&middot;</span>&nbsp;
-      <a href="privacy-policy.html">Privacy Policy</a>
-      &nbsp;<span class="footer-sep">&middot;</span>&nbsp;
-      <a href="https://github.com/GenesisTechAT/hotel-scanner" target="_blank" rel="noopener">GitHub</a>
-    </p>
-  </footer>
-
-  <script>
-    (function() {
-      var toggle = document.getElementById('themeToggle');
-      var label = document.getElementById('themeLabel');
-      var stored = localStorage.getItem('hs-theme');
-      if (stored === 'dark' || (!stored && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-        document.documentElement.setAttribute('data-theme', 'dark');
-        label.textContent = 'Light';
-      }
-      toggle.addEventListener('click', function() {
-        var isDark = document.documentElement.getAttribute('data-theme') === 'dark';
-        if (isDark) {
-          document.documentElement.removeAttribute('data-theme');
-          label.textContent = 'Dark';
-          localStorage.setItem('hs-theme', 'light');
-        } else {
-          document.documentElement.setAttribute('data-theme', 'dark');
-          label.textContent = 'Light';
-          localStorage.setItem('hs-theme', 'dark');
-        }
-      });
-    })();
-  </script>
 </body>
 </html>
